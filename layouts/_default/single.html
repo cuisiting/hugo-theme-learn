@@ -1,12 +1,19 @@
 {{ partial "header.html" . }}
 
 {{ .Content }}
-
+<pre> single.html </pre>
 <footer class="footline">
 	{{with .Params.LastModifierDisplayName}}
 	    <i class='fas fa-user'></i> <a href="mailto:{{ $.Params.LastModifierEmail }}">{{ . }}</a> {{with $.Date}} <i class='fas fa-calendar'></i> {{ .Format "02/01/2006" }}{{end}}
 	    </div>
 	{{end}}
 </footer>
+
+<h4>Comments:</h4>
+<div id="cusdis_thread" class="my-comment"  data-host="https://cusdis.com"
+  data-app-id="cbdcdf6a-583c-4871-824c-ff17835e14e4"
+  data-page-id="{{ .File.UniqueID }}" data-page-url="{{ .Permalink }}"
+  data-page-title="{{ .Title }}"></div>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
 {{ partial "footer.html" . }}
